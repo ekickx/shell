@@ -1,0 +1,19 @@
+[core]
+  pager = delta
+
+[diff]
+	colorMoved = default
+
+[delta]
+  features = line-numbers decorations
+  minus-style                   = red
+  minus-non-emph-style          = red
+  minus-emph-style              = reverse red
+  plus-style                    = green
+  plus-non-emph-style           = green
+  plus-emph-style               = reverse green
+  minus-empty-line-marker-style = normal "#4d4b4f"
+  plus-empty-line-marker-style  = normal "#3e5c64"
+  line-numbers-zero-style       = "#ffffff"
+  line-numbers-minus-style      = red
+  line-numbers-plus-style       = green
