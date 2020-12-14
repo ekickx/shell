@@ -30,13 +30,13 @@ zinit light paulmelnikow/zsh-startup-timer
 ## Load prompt theme
 zinit light denysdovhan/spaceship-prompt
 
-## Load my lib from gitlab
-# Keybinding
-zinit ice id-as="keybinding.zsh"
-zinit snippet https://gitlab.com/ekickx/my-zsh-lib/-/raw/master/key-binding.zsh
+## Load my aliases and other zsh lib 
 # Aliases
-zinit ice id-as="aliases"
-zinit snippet https://gitlab.com/ekickx/my-zsh-lib/-/raw/master/aliases
+zinit ice id-as="my-zsh-lib/aliases"
+zinit snippet ~/.my-zsh-lib/aliases
+# Keybinding
+zinit ice id-as="my-zsh-lib/keybinding.zsh"
+zinit snippet ~/.my-zsh-lib/keybinding.zsh
 
 ## Nice libs from oh-my-zsh
 # Load this lib immediatly because it can't work if wait
@@ -58,6 +58,7 @@ zinit wait="1" lucid light-mode for \
 # Get prebuilt binaries from github release
 zinit wait lucid from="github-rel" as="program" for \
     sbin"fzf"          junegunn/fzf \
+    sbin"btm"          ClementTsang/bottom \
     sbin"**/rg"        BurntSushi/ripgrep \
     sbin"**/delta"     dandavison/delta \
     sbin"**/bat"       @sharkdp/bat \

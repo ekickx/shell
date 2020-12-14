@@ -1,0 +1,47 @@
+# Autocorrect
+setopt correct
+
+# Changing/making/removing directory
+setopt auto_cd # Change directory without typing cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+
+# Unalias zinit's zi
+unalias zi
+
+alias -g ...='../..'
+alias -g ....='../../..'
+
+alias -- -='cd -'
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+
+alias md='mkdir -p'
+alias d='dirs -v | head -10'
+
+# List directory contents
+alias ls='ls --color=always'
+alias la='exa -a'
+
+# Git aliases
+alias s='git status'
+alias gcl='git clone --recursive'
+alias gr='git remote'
+alias gp='git push'
+alias gc='git commit -m'
+
+# Tmux
+alias ta='tmux attach -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tk='tmux kill-session -t'
+
+alias ps_mem='sudo ps_mem'
+alias diff='diff --color'
+alias yarn='yarnpkg'
+alias vim='nvim'
