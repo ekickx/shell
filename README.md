@@ -1,12 +1,10 @@
 ## Table of Content
-- [My Workflow Demo](#my-workflow-demo)
 - [How to Use](#how-to-use)
 - [Zshenv](#zshenv)
 - [Zshrc](#zshrc)
   * [Plugin](#plugin)
+  * [Zshrc.d](#zshrc.d)
   * [CLI Program](#cli-program) 
-
-# My Workflow Demo 
 
 # How to Use
 Just create symlink to its respective dir. Or just use the `deploy.sh`
@@ -26,46 +24,55 @@ cd term-n-shell
 ```
 
 # Zshenv
-My `.zshenv` and `.bash_profile` are symlink of `.profile`. After setting environment variable, on the last line, I put command that will set my terminal colorscheme with [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors). You can generate it with [paleta](https://github.com/dylanaraps/paleta)
+My `.zshenv` and `.bash_profile` are symlink of `.profile`. 
 
 # Zshrc
-I use [`zinit`](https://github.com/zdharma/zinit) for managing my `.zshrc`. It's blazing fast. Usually I get startup time around 130-290 ms. This is the time I got when writing this README
+I use [`zinit`](https://github.com/zdharma/zinit) for managing my `.zshrc`. It's blazing fast. Usually I get startup time around 130-290 ms. 
+
+<details>
+  <summary>This is the time I got when writing this README</summary>
 
 ```
 ➜ zinit times
 Plugin loading times:
-    4 ms - zinit-zsh/z-a-rust
+    3 ms - zinit-zsh/z-a-rust
     2 ms - zinit-zsh/z-a-as-monitor
     3 ms - zinit-zsh/z-a-patch-dl
-    6 ms - zinit-zsh/z-a-bin-gem-node
-    7 ms - paulmelnikow/zsh-startup-timer
-   21 ms - denysdovhan/spaceship-prompt
-    2 ms - my-zsh-lib/aliases
-    3 ms - my-zsh-lib/keybinding.zsh
-    2 ms - OMZ::lib/history.zsh
+    5 ms - zinit-zsh/z-a-bin-gem-node
+    8 ms - paulmelnikow/zsh-startup-timer
+   26 ms - denysdovhan/spaceship-prompt
+    1 ms - zshrc.d/spaceship-config.zsh
+    2 ms - zshrc.d/keybinding.zsh
+    1 ms - OMZ::lib/history.zsh
+    2 ms - zshrc.d/aliases
+    2 ms - zshrc.d/function.zsh
     2 ms - OMZ::lib/completion.zsh
     2 ms - OMZ::lib/termsupport.zsh
-    2 ms - junegunn/fzf (command)
-    2 ms - ClementTsang/bottom (command)
-    2 ms - BurntSushi/ripgrep (command)
-    2 ms - dandavison/delta (command)
-    2 ms - sharkdp/bat (command)
-    2 ms - sharkdp/fd (command)
-    2 ms - ogham/exa (command)
-    2 ms - nivekuil/rip (command)
-    2 ms - hackerb9/lsix (command)
-    2 ms - dylanaraps/paleta (command)
-    2 ms - dylanaraps/pfetch (command)
-    2 ms - jarun/nnn (command)
-    8 ms - zsh-users/zsh-autosuggestions
+    2 ms - OMZ::plugins/command-not-found
+    1 ms - junegunn/fzf (command)
+    1 ms - ClementTsang/bottom (command)
+    1 ms - BurntSushi/ripgrep (command)
+    1 ms - dandavison/delta (command)
+    1 ms - sharkdp/bat (command)
+    1 ms - sharkdp/fd (command)
+    1 ms - ogham/exa (command)
+    1 ms - nivekuil/rip (command)
+    1 ms - hackerb9/lsix (command)
+    1 ms - dylanaraps/paleta (command)
+    1 ms - dylanaraps/pfetch (command)
+    1 ms - jarun/nnn (command)
+    3 ms - zsh-users/zsh-autosuggestions
     3 ms - zdharma/history-search-multi-word
-   11 ms - wfxr/forgit
-   31 ms - zdharma/fast-syntax-highlighting
-Total: 0.131 sec
+   12 ms - wfxr/forgit
+    2 ms - romkatv/zsh-prompt-benchmark
+   28 ms - zdharma/fast-syntax-highlighting
+    2 ms - zshrc.d/plugins-config
+Total: 0.123 sec
 ```
+</details>
 
 ## Plugin
-These are the zsh plugins that I use
+These are the zsh plugins that I use:
 
 - [zsh-startup-timer](https://github.com/paulmelnikow/zsh-startup-timer)
 - [spaceship-prompt](https://github.com/denysdovhan/spaceship-prompt) - Nice zsh prompt theme
@@ -74,10 +81,29 @@ These are the zsh plugins that I use
 - [forgit](https://github.com/wfxr/forgit) - A utility tool powered by fzf for using git interactively
 - [fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting)
 
+## Zshrc.d
+I use directory `zshrc.d` to place my other zsh configuration, such as aliases, keybinding, and plugin's config.
+
+- [Spaceship's config](zshrc.d/spaceship-config.zsh)
+
+  I change some icons and make `git_status` to show file's amount that modified, deleted, stagged, etc.
+
+- [Keybinding](zshrc.d/keybinding.zsh)
+
+  You can see all the keybinding that I use with `bindkey -M main`
+
+- [Aliases](zshrc.d/aliases)
+
+- [Function](zshrc.d/function.zsh) - Useful functions
+
+- [Plugins config](zshrc.d/plugins-config.zsh) - Config for plugin that has few config option
+
+  I plan to dump all plugins's config that has few config option in this file. For now I only use it for [`fast-syntax-highlighting`](https://github.com/zdharma/fast-syntax-highlighting) to display bracket highlighting.
+
 ## CLI Program
 One of the reason I like `zinit` is the possibility to manage binaries. So If a package hasn't available in my distro's repo, I just grab the prebuilt binary or compile it with `zinit`.
 
-This is the CLI program list that I use with `zinit`.
+This is the CLI program list that I use with `zinit`:
 
 - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder 
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - `grep` but respect your gitignore
