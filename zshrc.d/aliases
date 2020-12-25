@@ -22,6 +22,7 @@ alias 5='cd -5'
 alias 6='cd -6'
 
 alias md='mkdir -p'
+alias rd='rmdir'
 alias d='dirs -v | head -10'
 
 # List directory contents
@@ -29,7 +30,7 @@ alias ls='ls --color=always'
 alias la='exa -a'
 
 # Git aliases
-alias s='git status'
+alias s='git status -uall'
 alias gcl='git clone --recursive'
 alias gr='git remote'
 alias gp='git push'
