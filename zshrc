@@ -46,8 +46,11 @@ zinit snippet ~/.zshrc.d/aliases
 # Useful function
 zinit ice wait lucid id-as="zshrc.d/function.zsh"
 zinit snippet ~/.zshrc.d/function.zsh
+# Z.lua config
+zinit ice wait lucid id-as="zshrc.d/z-lua-config.zsh"
+zinit snippet ~/.zshrc.d/z-lua-config.zsh
 # Config for plugin that has few config option
-zinit ice wait="2" lucid id-as="zshrc.d/plugins-config"
+zinit ice wait="2" lucid id-as="zshrc.d/plugins-config.zsh"
 zinit snippet ~/.zshrc.d/plugins-config.zsh
 
 ## Nice libs from oh-my-zsh ##
@@ -62,8 +65,12 @@ zinit wait lucid for \
 zinit wait="1" lucid light-mode for \
     zsh-users/zsh-autosuggestions \
     zdharma/history-search-multi-word \
+    Aloxaf/fzf-tab \
+    skywind3000/z.lua \
     wfxr/forgit \
     romkatv/zsh-prompt-benchmark \
+    MichaelAquilina/zsh-you-should-use \
+    hlissner/zsh-autopair \
     zdharma/fast-syntax-highlighting
 
 ## Get cool cli programs ##

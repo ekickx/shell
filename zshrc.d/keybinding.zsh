@@ -17,8 +17,8 @@ fi
 bindkey -e                                            # Use emacs key bindings
 
 bindkey -s '^f' 'fg\n'                                # [Ctrl-f] - Bring job to foreground
-bindkey -s '^[l' 'exa\n'                              # [Alt-l] - Run exa - ls alternative
-bindkey -s '^[L' 'exa -a\n'                           # [Alt-Shift-l] - List all files
+bindkey -s '^[l' 'ls\n'                               # [Alt-l] - Run exa - ls alternative
+bindkey -s '^[L' 'la\n'                               # [Alt-Shift-l] - List all files
 bindkey -s '^n' 'nnn\n'                               # [Ctrl-n] - Run nnn - cli file manager
 
 # Start typing + [Up-Arrow] - fuzzy find history forward

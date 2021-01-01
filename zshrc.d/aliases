@@ -10,8 +10,8 @@ setopt pushdminus
 # Unalias zinit's zi
 unalias zi
 
-alias -g ...='../..'
-alias -g ....='../../..'
+alias -g ...='zb ...'
+alias -g ....='zb ....'
 
 alias -- -='cd -'
 alias 1='cd -'
@@ -26,15 +26,31 @@ alias rd='rmdir'
 alias d='dirs -v | head -10'
 
 # List directory contents
-alias ls='ls --color=always'
-alias la='exa -a'
+alias ls='exa --icons --group-directories-first'
+alias la='exa -a --icons --group-directories-first'
 
 # Git aliases
 alias s='git status -uall'
+
+alias gc='git commit'
+alias gcms='git commit -m'
+alias gco='git checkout'
 alias gcl='git clone --recursive'
+
 alias gr='git remote'
+alias gra='git remote add'
+
+alias grh='git reset'
+alias grhh='git reset --hard'
+alias grev='git revert'
+
+alias gstp='git stash push'
+alias gsta='git stash apply'
+alias gstc='git stash clear'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+
 alias gp='git push'
-alias gc='git commit -m'
 
 # Tmux
 alias ta='tmux attach -t'
@@ -45,4 +61,5 @@ alias tk='tmux kill-session -t'
 alias ps_mem='sudo ps_mem'
 alias diff='diff --color'
 alias yarn='yarnpkg'
+alias nnn='nnn -C'
 alias vim='nvim'
