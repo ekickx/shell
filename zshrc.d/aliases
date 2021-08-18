@@ -9,6 +9,9 @@ setopt pushdminus
 
 # Unalias zinit's zi
 unalias zi
+unalias zini
+unalias zpl
+unalias zplg
 
 alias -g ...='zb ...'
 alias -g ....='zb ....'
@@ -49,6 +52,9 @@ alias gsta='git stash apply'
 alias gstc='git stash clear'
 alias gstd='git stash drop'
 alias gstl='git stash list'
+
+alias gsw='git switch'
+alias gswc='git switch -c'
 
 alias gp='git push'
 

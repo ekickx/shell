@@ -17,3 +17,8 @@
   line-numbers-zero-style       = "#ffffff"
   line-numbers-minus-style      = red
   line-numbers-plus-style       = green
+[user]
+	email = ghani.rafif.2112@gmail.com
+	name = Ghani Rafif
+[init]
+	defaultBranch = main

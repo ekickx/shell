@@ -9,7 +9,7 @@ if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
 fi
 
 source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
+autoload -Uz _zinit compinit && compinit 
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # Load a few important annexes, without Turbo
@@ -25,7 +25,7 @@ zinit light-mode for \
 ### User config here ###
 
 ## Choose colorscheme from paleta or wal
-(cat ~/.cache/current-palette) || (cat ~/.cache/wal/sequences) 2> /dev/null
+((cat ~/.cache/current-palette) || (cat ~/.cache/wal/sequences)) 2>/dev/null
 
 ## Speed test plugin
 zinit light paulmelnikow/zsh-startup-timer
@@ -63,9 +63,9 @@ zinit wait lucid for \
     OMZ::plugins/command-not-found
 # Load these plugins 1 second after prompt loaded
 zinit wait="1" lucid light-mode for \
+    Aloxaf/fzf-tab \
     zsh-users/zsh-autosuggestions \
     zdharma/history-search-multi-word \
-    Aloxaf/fzf-tab \
     skywind3000/z.lua \
     wfxr/forgit \
     romkatv/zsh-prompt-benchmark \
@@ -77,13 +77,12 @@ zinit wait="1" lucid light-mode for \
 # Get prebuilt binaries from github release
 zinit wait lucid from="github-rel" as="program" for \
     sbin"fzf"          junegunn/fzf \
-    sbin"btm"          ClementTsang/bottom \
     sbin"**/rg"        BurntSushi/ripgrep \
     sbin"**/delta"     dandavison/delta \
     sbin"**/bat"       @sharkdp/bat \
     sbin"**/fd"        @sharkdp/fd \
-    sbin"exa* -> exa"  ogham/exa \
-    sbin"rip* -> rip"  nivekuil/rip 
+    sbin"bin/* -> exa" ogham/exa \
+    sbin"nix* -> nix-user-chroot" nix-community/nix-user-chroot
 # Cli program that doesn't have github release
 # or need to be compiled manually 
 zinit wait lucid from="github" as="program" for \

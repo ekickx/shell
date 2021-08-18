@@ -1,32 +1,42 @@
-## Table of Content
+<p align="center">
+  <img src="img/pfetch-demo.png">
+  <br>
+  <a href="#how-to-use">Installation</a>
+  ·
+  <a href="DEMO.md">Demo</a>
+</p>
+
+### Table of Content
 - [How to Use](#how-to-use)
-- [Zshenv](#zshenv)
-- [Zshrc](#zshrc)
+- [Env Var](#env-var)
+- [Zsh](#zsh)
   * [Plugin](#plugin)
   * [Zshrc.d](#zshrc.d)
   * [CLI Program](#cli-program) 
 
-# How to Use
-Just create symlink to its respective dir. Or just use the `deploy.sh`
+## How to Use
+First you need to install `make`
 
-```
-example
-
-git clone https://github.com/ekickx/term-n-shell
-cd term-n-shell
-ln -s -f ${PWD}/zshrc ${HOME}/.zshrc
-
-or
-
-git clone https://github.com/ekickx/term-n-shell
-cd term-n-shell
-./deploy.sh
+```bash
+sudo dnf install make
 ```
 
-# Zshenv
+And deploy what you want, like:
+
+```bash
+make zsh
+```
+
+To show available target, use:
+
+```bash
+make list
+```
+
+## Env Var
 My `.zshenv` and `.bash_profile` are symlink of `.profile`. 
 
-# Zshrc
+## Zsh
 I use [`zinit`](https://github.com/zdharma/zinit) for managing my `.zshrc`. It's blazing fast. Usually I get startup time around 130-290 ms. 
 
 <details>
@@ -71,7 +81,7 @@ Total: 0.123 sec
 ```
 </details>
 
-## Plugin
+### Plugin
 These are the zsh plugins that I use:
 
 - [zsh-startup-timer](https://github.com/paulmelnikow/zsh-startup-timer)
@@ -81,12 +91,10 @@ These are the zsh plugins that I use:
 - [forgit](https://github.com/wfxr/forgit) - A utility tool powered by fzf for using git interactively
 - [fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting)
 
-## Zshrc.d
+### Zshrc.d
 I use directory `zshrc.d` to place my other zsh configuration, such as aliases, keybinding, and plugin's config.
 
 - [Spaceship's config](zshrc.d/spaceship-config.zsh)
-
-  I change some icons and make `git_status` to show file's amount that modified, deleted, stagged, etc.
 
 - [Keybinding](zshrc.d/keybinding.zsh)
 
@@ -100,7 +108,7 @@ I use directory `zshrc.d` to place my other zsh configuration, such as aliases, 
 
   I plan to dump all plugins's config that has few config option in this file. For now I only use it for [`fast-syntax-highlighting`](https://github.com/zdharma/fast-syntax-highlighting) to display bracket highlighting.
 
-## CLI Program
+### CLI Program
 One of the reason I like `zinit` is the possibility to manage binaries. So If a package hasn't available in my distro's repo, I just grab the prebuilt binary or compile it with `zinit`.
 
 This is the CLI program list that I use with `zinit`:
